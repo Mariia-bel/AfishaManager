@@ -18,18 +18,18 @@ public class AfishaManagerTest {
             3, "third");
     private FilmItem fourth = new FilmItem(
             4, "fourth");
-    private FilmItem fifth  = new FilmItem(
-            5,"fifth");
-    private FilmItem sixth  = new FilmItem(
+    private FilmItem fifth = new FilmItem(
+            5, "fifth");
+    private FilmItem sixth = new FilmItem(
             6, "sixth");
     private FilmItem seventh = new FilmItem(
             7, "seventh");
     private FilmItem eighth = new FilmItem(
-            8,"eighth");
+            8, "eighth");
     private FilmItem ninth = new FilmItem(
-            9,"ninth");
+            9, "ninth");
     private FilmItem tenth = new FilmItem(
-            10,"tenth");
+            10, "tenth");
     private FilmItem eleventh = new FilmItem(
             11, "eleventh");
     private FilmItem twelfth = new FilmItem(
