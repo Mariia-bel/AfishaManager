@@ -29,7 +29,13 @@ public class AfishaManager {
     }
 
     // что запомнил
-    public FilmItem[] findAll(){ return movies;}
+    public FilmItem[] findAll(){
+            if (movies.length == 0) {
+                System.out.println("Мы уже работаем над добавлением фильмов. Спасибо за понимание");
+            } else {
+                return movies;
+            }
+        return movies;}
 
 
     // что запомнил в обратном порядке
@@ -47,13 +53,13 @@ public class AfishaManager {
 
 
     public FilmItem[] findLast() {
-        int resultLength;
-        if (limit > movies.length) {
+        int resultLength; //заводим переменную
+        if (limit > movies.length) { //выставляем ограничение
             resultLength = movies.length;
         } else {
             resultLength = limit;
         }
-
+// в обратном порядке
         FilmItem [] result = new FilmItem[resultLength];
         for (int i = 0; i < resultLength; i++) {
             int index = movies.length - i - 1;

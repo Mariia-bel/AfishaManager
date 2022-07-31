@@ -127,4 +127,14 @@ public class AfishaManagerTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void shouldPrintText(){
+        AfishaManager manager = new AfishaManager(5);
+        FilmItem[] actual = manager.findAll();
+        FilmItem[] expected = new FilmItem[0];
+        assertArrayEquals(expected, actual);
+
+    }
+
+
 }
