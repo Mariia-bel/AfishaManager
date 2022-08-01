@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class AfishaManagerTest {
 
 
-
     //сохранение
     @Test
     void addFilms() {
@@ -33,9 +32,10 @@ public class AfishaManagerTest {
         assertArrayEquals(expected, actual);
 
     }
+
     // показать, что запомнил
     @Test
-    public void shouldFindAll(){
+    public void shouldFindAll() {
         AfishaManager manager = new AfishaManager();
         manager.addFilm("first");
         manager.addFilm("second");
@@ -76,7 +76,7 @@ public class AfishaManagerTest {
         manager.addFilm("ninth");
         manager.addFilm("tenth");
         String[] actual = manager.findLast();
-        String[] expected = {"tenth", "ninth", "eighth", "seventh", "sixth","fifth","fourth", "third", "second" ,"first"};
+        String[] expected = {"tenth", "ninth", "eighth", "seventh", "sixth", "fifth", "fourth", "third", "second", "first"};
 
     }
 
@@ -99,7 +99,7 @@ public class AfishaManagerTest {
         manager.addFilm("thirteenth");
 
         String[] actual = manager.findLast();
-        String[] expected = {"thirteenth", "twelfth", "eleventh", "tenth", "ninth", "eighth", "seventh", "sixth","fifth","fourth", "third", "second" ,"first"};
+        String[] expected = {"thirteenth", "twelfth", "eleventh", "tenth", "ninth", "eighth", "seventh", "sixth", "fifth", "fourth", "third", "second", "first"};
 
         assertArrayEquals(expected, actual);
     }
@@ -119,13 +119,14 @@ public class AfishaManagerTest {
         manager.addFilm("eighth");
         manager.addFilm("ninth");
         manager.addFilm("tenth");
-        String[] expected = {"tenth", "ninth", "eighth", "seventh", "sixth","fifth","fourth", "third"};
+        String[] expected = {"tenth", "ninth", "eighth", "seventh", "sixth", "fifth", "fourth", "third"};
         String[] actual = manager.findLast();
         assertArrayEquals(expected, actual);
     }
+
     // когда нет ни одного добавленного Фильма
     @Test
-    void shouldPrintText(){
+    void shouldPrintText() {
         AfishaManager manager = new AfishaManager(5);
         String[] actual = manager.findAll();
         String[] expected = new String[0];

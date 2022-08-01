@@ -41,12 +41,12 @@ public class AfishaManager {
         String[] result; //создаем результирующий массив
         if (limit < movies.length) {
             result = new String[limit]; //если длина результирующего массива больше лимита, то она = лимиту
-        }else {
+        } else {
             result = new String[movies.length]; //если меньше, то разна длине массива
         }
         //в обратном порядке
         for (int i = 0; i < result.length; i++) {
-            result[i] = movies[movies.length -i -1];
+            result[i] = movies[movies.length - i - 1];
         }
         return result;
     }
