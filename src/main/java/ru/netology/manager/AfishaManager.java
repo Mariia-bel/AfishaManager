@@ -1,14 +1,12 @@
 package ru.netology.manager;
 
-import ru.netology.domain.FilmItem;
-
 import static java.lang.System.arraycopy;
 
 
 public class AfishaManager {
 
     private int limit;
-    private FilmItem[] movies = new FilmItem[0]; // пустой
+    private String[] movies = new String[0]; // пустой
 
     public AfishaManager() { // выставляем лимит
         this.limit = 10;
@@ -19,9 +17,9 @@ public class AfishaManager {
     }
 
     // добавление
-    public void addFilm(FilmItem movie) { // создаем массив на 1 больше
+    public void addFilm(String movie) { // создаем массив на 1 больше
         int length = movies.length + 1;// вычисляем длину +1
-        FilmItem[] tmp = new FilmItem[length];//новый массив
+        String[] tmp = new String[length];//новый массив
         arraycopy(movies, 0, tmp, 0, length - 1); // добавляем последний элемент
         int lastIndex = tmp.length - 1;// вычисляем номер не заполн ячейки, для доб посл элемента
         tmp[lastIndex] = movie;
@@ -29,41 +27,26 @@ public class AfishaManager {
     }
 
     // что запомнил
-    public FilmItem[] findAll(){
-            if (movies.length == 0) {
-                System.out.println("Мы уже работаем над добавлением фильмов. Спасибо за понимание");
-            } else {
-                return movies;
-            }
-        return movies;}
-
-
-    // что запомнил в обратном порядке
-    public FilmItem[] getAll() {
-
-        FilmItem[] movies = findAll();//что запомнил
-        FilmItem[] newResult = new FilmItem[movies.length]; // новый массив
-        for (int i = 0; i < newResult.length; i++) {//перебирает массив
-            int index = movies.length - i - 1;// берем ячейку, куда хотим копировать -1, вычисляем последнюю ячейку, чтоб скопировать первую
-            newResult[i] = movies[index]; // из старого массива размера индекс положить в массив резалт
+    public String[] findAll() {
+        if (movies.length == 0) {
+            System.out.println("Мы уже работаем над добавлением фильмов. Спасибо за понимание");
+        } else {
+            return movies;
         }
-
-        return newResult;
+        return movies;
     }
 
 
-    public FilmItem[] findLast() {
-        int resultLength; //заводим переменную
-        if (limit > movies.length) { //выставляем ограничение
-            resultLength = movies.length;
-        } else {
-            resultLength = limit;
+    public String[] findLast() {
+        String[] result; //создаем результирующий массив
+        if (limit < movies.length) {
+            result = new String[limit]; //если длина результирующего массива больше лимита, то она = лимиту
+        }else {
+            result = new String[movies.length]; //если меньше, то разна длине массива
         }
-// в обратном порядке
-        FilmItem [] result = new FilmItem[resultLength];
-        for (int i = 0; i < resultLength; i++) {
-            int index = movies.length - i - 1;
-            result[i] = movies[index]; //копируем массив
+        //в обратном порядке
+        for (int i = 0; i < result.length; i++) {
+            result[i] = movies[movies.length -i -1];
         }
         return result;
     }
